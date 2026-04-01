@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar'
 import ProductsCards from './Components/ProductsCards'
 import Ratings from './Components/Ratings'
 import Getstarted from './Components/Getstarted'
+import Pricing from './Components/Pricing'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <ProductsCards setcartCount={setcartCount} cartCount={cartCount} />
 
       <Getstarted />
+      <Pricing />
 
     </div>
   )
