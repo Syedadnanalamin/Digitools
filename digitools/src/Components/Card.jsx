@@ -1,7 +1,7 @@
 import React from 'react';
 import Producimages from '../assets/products/productsImage';
 import { toast } from 'react-toastify';
-const Card = ({ productInfo }) => {
+const Card = ({ productInfo, setcartCount, cartCount }) => {
 
 
     const addTocartToast = () => {
@@ -18,6 +18,16 @@ const Card = ({ productInfo }) => {
 
         });
     }
+
+    const trackCount = () => {
+
+
+        setcartCount([...cartCount, productInfo])
+    }
+
+
+
+
 
 
     return (
@@ -60,7 +70,7 @@ const Card = ({ productInfo }) => {
 
                     </ul>
                     <div className="mt-6">
-                        <button className="btn btn-primary btn-block" onClick={() => addTocartToast()}>Buy Now</button>
+                        <button className="btn btn-primary btn-block" onClick={() => trackCount()}>Buy Now</button>
                     </div>
                 </div>
             </div>

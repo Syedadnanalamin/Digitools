@@ -1,6 +1,6 @@
 import React from 'react';
 import Producimages from '../assets/products/productsImage';
-const Cartcreator = () => {
+const Cartcreator = ({ cart }) => {
     return (
         <>
             <div className='flex flex-col lg:flex-row justify-between bg-gray-100 shadow p-10 rounded-xl'>
@@ -8,8 +8,8 @@ const Cartcreator = () => {
                 <div className='flex gap-3'>
                     <img src={Producimages.designTool} alt="" className='h-7' />
                     <div>
-                        <h1>Ai writing pro</h1>
-                        <p><span className='font-semibold text-[#627382]'>19$</span></p>
+                        <h1>{cart.title}</h1>
+                        <p><span className='font-semibold text-[#627382]'>${cart.price.amount}</span></p>
                     </div>
                 </div>
 

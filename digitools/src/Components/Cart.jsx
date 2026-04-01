@@ -18,6 +18,8 @@ const Cart = ({ cartCount }) => {
                         </div>
 
                         {/* here will be all cart call */}
+                        {cartCount.map((cart) => <Cartcreator cart={cart} cartCount={cartCount} />)}
+
 
                     </div>
 

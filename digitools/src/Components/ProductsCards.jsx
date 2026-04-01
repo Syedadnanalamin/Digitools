@@ -4,7 +4,7 @@ import { useState } from 'react';
 const ProductsInfo = fetch('/products.json').then((res) => res.json());
 const ProductsCards = ({ cartCount, setcartCount }) => {
     const [ProductCartToggle, setProductCartToggle] = useState("products")
-    console.log(ProductCartToggle);
+
 
 
     return (
@@ -20,7 +20,7 @@ const ProductsCards = ({ cartCount, setcartCount }) => {
                 <button className={`btn ${ProductCartToggle === "cart" && "btn-primary"}`} onClick={() => setProductCartToggle("cart")}>Cart({cartCount.length})</button>
             </div>
 
-            {ProductCartToggle === "products" ? <Products ProductsInfo={ProductsInfo} /> : <Cart cartCount={cartCount} />}
+            {ProductCartToggle === "products" ? <Products ProductsInfo={ProductsInfo} setcartCount={setcartCount} cartCount={cartCount} /> : <Cart cartCount={cartCount} />}
 
         </div>
     );
