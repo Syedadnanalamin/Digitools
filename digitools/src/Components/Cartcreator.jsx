@@ -1,5 +1,6 @@
 import React from 'react';
 import Producimages from '../assets/products/productsImage';
+import { toast } from 'react-toastify';
 const Cartcreator = ({ cart, cartCount, setcartCount }) => {
 
     const removeCart = () => {
@@ -7,8 +8,23 @@ const Cartcreator = ({ cart, cartCount, setcartCount }) => {
         const afterRemovecart = cartCount.filter((val) => cart.title != val.title)
         setcartCount(afterRemovecart)
 
+        toast.error('Cart has been removed', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+
+        });
+
 
     }
+
+
+
 
 
     return (

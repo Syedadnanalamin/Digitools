@@ -1,8 +1,15 @@
-import React from 'react';
+
 import Cartcreator from './Cartcreator';
 
 
 const Cart = ({ cartCount, setcartCount }) => {
+    let totalPrice = 0;
+
+    for (const item of cartCount) {
+        totalPrice += item.price.amount;
+    }
+
+
     return (
         <div className='w-full  min-h-100  mx-auto flex justify-center'>
             <div className='w-[70%] flex flex-col '>
@@ -20,7 +27,17 @@ const Cart = ({ cartCount, setcartCount }) => {
                         {/* here will be all cart call */}
                         {cartCount.map((cart) => <Cartcreator cart={cart} cartCount={cartCount} setcartCount={setcartCount} />)}
 
-                        {cartCount.length == 0 && <h1 className='p-10 bg-gray-100 '>Your cart is empty!</h1>}
+                        {cartCount.length == 0 ? <h1 className='p-10 bg-gray-100 '>Your cart is empty!</h1> :
+                            <>
+                                <div className='flex justify-between mx-8 mt-5'>
+                                    <h1 className='font-bold'>Total :</h1>
+                                    <p className='font-semibold'>${totalPrice}</p>
+                                </div>
+                                <button className='btn btn-primary rounded-full mx-5'>Proceed to checkout</button>
+                            </>
+                        }
+
+
                     </div>
 
 

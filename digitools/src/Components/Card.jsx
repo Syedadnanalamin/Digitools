@@ -71,7 +71,7 @@ const Card = ({ productInfo, setcartCount, cartCount }) => {
 
                     </ul>
                     <div className="mt-6">
-                        <button className="btn btn-primary btn-block" onClick={() => trackCount()}>{isProductadded == false ? "Buy Now" : "Added"}</button>
+                        <button className={`btn btn-primary border-none btn-block rounded-full ${isProductadded == true && "bg-green-500"}`} onClick={() => trackCount()}>{isProductadded == false ? "Buy Now" : "Added"}</button>
                     </div>
                 </div>
             </div>
