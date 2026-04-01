@@ -7,6 +7,8 @@ import ProductsCards from './Components/ProductsCards'
 import Ratings from './Components/Ratings'
 import Getstarted from './Components/Getstarted'
 import Pricing from './Components/Pricing'
+import CTAsection from './Components/CtaSection';
+import Footer from './Components/Footer'
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
 
       <Getstarted />
       <Pricing />
+      <CTAsection />
+      <Footer />
 
     </div>
   )
