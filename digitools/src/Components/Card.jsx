@@ -1,14 +1,33 @@
 import React from 'react';
 import Producimages from '../assets/products/productsImage';
-const Card = () => {
+import { toast } from 'react-toastify';
+const Card = ({ productInfo }) => {
+
+
+    const addTocartToast = () => {
+
+        toast.success('Added to the cart', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+
+        });
+    }
+
+
     return (
         <div>
-            <div className="card max-w-120 bg-base-100 shadow-sm">
-                <div className="card-body">
+            <div className="card max-w-120 h-full  bg-base-100 shadow-sm">
+                <div className="card-body  flex flex-col justify-between">
 
                     <div className="flex justify-end">
                         <span className="badge badge-xs badge-warning">
-                            Most Popular
+                            {productInfo.tag}
                         </span>
                     </div>
 
@@ -16,14 +35,14 @@ const Card = () => {
 
                     <div className="flex flex-col gap-2">
                         <div className='h-6 w-6'>
-                            <img src={Producimages.designTool} alt="" />
+                            <img src={Producimages[productInfo.image]} alt="" />
                         </div>
-                        <h2 className="text-3xl font-bold">Ai writing pro</h2>
+                        <h2 className="text-3xl font-bold">{productInfo.title}</h2>
 
                     </div>
                     <div >
-                        <p className='mb-1'>Generate high-quality content, blogs, <br /> and marketing copy in seconds with advanced AI.</p>
-                        <span className="text-xl font-bold ">$29/mo</span>
+                        <p className='mb-1'>{productInfo.description}</p>
+                        <span className="text-xl font-bold ">${productInfo.price.amount}</span>
                     </div>
                     <ul className="mt-6 flex flex-col gap-2 text-xs">
                         <li>
@@ -41,7 +60,7 @@ const Card = () => {
 
                     </ul>
                     <div className="mt-6">
-                        <button className="btn btn-primary btn-block">Buy Now</button>
+                        <button className="btn btn-primary btn-block" onClick={() => addTocartToast()}>Buy Now</button>
                     </div>
                 </div>
             </div>

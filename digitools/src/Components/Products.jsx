@@ -6,16 +6,10 @@ const Products = ({ ProductsInfo }) => {
 
     const ProductjsonData = use(ProductsInfo);
     return (
-        <div className='w-full px-20 mx-auto flex justify-center items-center'>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 justify-center'>
+        <div className='w-full min-h-250 px-20 mx-auto flex justify-center items-center'>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
 
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-
+                {ProductjsonData.map((productInfo) => <Card productInfo={productInfo} />)}
             </div>
         </div>
     );

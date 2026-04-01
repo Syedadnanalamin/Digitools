@@ -2,7 +2,7 @@ import Products from './Products';
 import Cart from './Cart';
 import { useState } from 'react';
 const ProductsInfo = fetch('/products.json').then((res) => res.json());
-const ProductsCards = () => {
+const ProductsCards = ({ cartCount, setcartCount }) => {
     const [ProductCartToggle, setProductCartToggle] = useState("products")
     console.log(ProductCartToggle);
 
@@ -17,10 +17,10 @@ const ProductsCards = () => {
 
             <div className='mx-auto flex gap-3'>
                 <button className={`btn ${ProductCartToggle === "products" && "btn-primary"}`} onClick={() => setProductCartToggle("products")}>Products</button>
-                <button className={`btn ${ProductCartToggle === "cart" && "btn-primary"}`} onClick={() => setProductCartToggle("cart")}>Cart(0)</button>
+                <button className={`btn ${ProductCartToggle === "cart" && "btn-primary"}`} onClick={() => setProductCartToggle("cart")}>Cart({cartCount.length})</button>
             </div>
 
-            {ProductCartToggle === "products" ? <Products ProductsInfo={ProductsInfo} /> : <Cart />}
+            {ProductCartToggle === "products" ? <Products ProductsInfo={ProductsInfo} /> : <Cart cartCount={cartCount} />}
 
         </div>
     );
