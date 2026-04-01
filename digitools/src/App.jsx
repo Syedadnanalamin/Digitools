@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className='max-w-400  max-h-screen h-full  mx-auto px-3 flex flex-col gap-2 '>
-      <Navbar />
+      <Navbar cartCount={cartCount} />
       <Herosection />
       <Ratings />
       <ProductsCards setcartCount={setcartCount} cartCount={cartCount} />

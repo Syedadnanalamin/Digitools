@@ -20,7 +20,7 @@ const ProductsCards = ({ cartCount, setcartCount }) => {
                 <button className={`btn ${ProductCartToggle === "cart" && "btn-primary"}`} onClick={() => setProductCartToggle("cart")}>Cart({cartCount.length})</button>
             </div>
 
-            {ProductCartToggle === "products" ? <Products ProductsInfo={ProductsInfo} setcartCount={setcartCount} cartCount={cartCount} /> : <Cart cartCount={cartCount} />}
+            {ProductCartToggle === "products" ? <Products ProductsInfo={ProductsInfo} setcartCount={setcartCount} cartCount={cartCount} /> : <Cart cartCount={cartCount} setcartCount={setcartCount} />}
 
         </div>
     );

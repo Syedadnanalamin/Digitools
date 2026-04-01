@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Producimages from '../assets/products/productsImage';
 import { toast } from 'react-toastify';
 const Card = ({ productInfo, setcartCount, cartCount }) => {
 
+    const [isProductadded, setisProductadded] = useState(false);
 
-    const addTocartToast = () => {
 
+
+    const trackCount = () => {
+
+
+        setcartCount([...cartCount, productInfo])
         toast.success('Added to the cart', {
             position: "top-right",
             autoClose: 3000,
@@ -17,12 +22,8 @@ const Card = ({ productInfo, setcartCount, cartCount }) => {
             theme: "light",
 
         });
-    }
 
-    const trackCount = () => {
-
-
-        setcartCount([...cartCount, productInfo])
+        setisProductadded(true);
     }
 
 
@@ -70,7 +71,7 @@ const Card = ({ productInfo, setcartCount, cartCount }) => {
 
                     </ul>
                     <div className="mt-6">
-                        <button className="btn btn-primary btn-block" onClick={() => trackCount()}>Buy Now</button>
+                        <button className="btn btn-primary btn-block" onClick={() => trackCount()}>{isProductadded == false ? "Buy Now" : "Added"}</button>
                     </div>
                 </div>
             </div>
