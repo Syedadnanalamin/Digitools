@@ -2,6 +2,7 @@
     {
         "title": "AI Writing Pro",
         "tag": "Best Seller",
+        "image": "writing",
         "price": {
             "amount": 29,
             "type": "monthly"
@@ -16,6 +17,7 @@
     {
         "title": "Design Templates Pack",
         "tag": "Popular",
+        "image": "designTool",
         "price": {
             "amount": 49,
             "type": "one-time"
@@ -30,6 +32,7 @@
     {
         "title": "Premium Stock Assets",
         "tag": "New",
+        "image": "portfolio",
         "price": {
             "amount": 19,
             "type": "monthly"
@@ -44,6 +47,7 @@
     {
         "title": "Automation Toolkit",
         "tag": "Popular",
+        "image": "operation",
         "price": {
             "amount": 79,
             "type": "monthly"
@@ -58,6 +62,7 @@
     {
         "title": "Resume Builder Pro",
         "tag": "New",
+        "image": "shoppingCart",
         "price": {
             "amount": 15,
             "type": "one-time"
@@ -72,6 +77,7 @@
     {
         "title": "Social Media Content Kit",
         "tag": "Best Seller",
+        "image": "socialMedia",
         "price": {
             "amount": 39,
             "type": "monthly"
