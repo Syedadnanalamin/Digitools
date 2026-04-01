@@ -9,6 +9,11 @@ const Cart = ({ cartCount, setcartCount }) => {
         totalPrice += item.price.amount;
     }
 
+    const clearCarts = () => {
+
+        setcartCount([]);
+    }
+
 
     return (
         <div className='w-full  min-h-100  mx-auto flex justify-center'>
@@ -33,7 +38,7 @@ const Cart = ({ cartCount, setcartCount }) => {
                                     <h1 className='font-bold'>Total :</h1>
                                     <p className='font-semibold'>${totalPrice}</p>
                                 </div>
-                                <button className='btn btn-primary rounded-full mx-5'>Proceed to checkout</button>
+                                <button className='btn btn-primary rounded-full mx-5' onClick={clearCarts}>Proceed to checkout</button>
                             </>
                         }
 

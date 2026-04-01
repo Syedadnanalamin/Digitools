@@ -5,6 +5,7 @@ import Herosection from './Components/Herosection'
 import Navbar from './Components/Navbar'
 import ProductsCards from './Components/ProductsCards'
 import Ratings from './Components/Ratings'
+import Getstarted from './Components/Getstarted'
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
       <Herosection />
       <Ratings />
       <ProductsCards setcartCount={setcartCount} cartCount={cartCount} />
+
+      <Getstarted />
 
     </div>
   )

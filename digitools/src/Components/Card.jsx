@@ -26,7 +26,12 @@ const Card = ({ productInfo, setcartCount, cartCount }) => {
         setisProductadded(true);
     }
 
-
+    const getTagStyle = (tag) => {
+        if (tag === "Best Seller") return "bg-orange-100 text-orange-500";
+        if (tag === "Popular") return "bg-purple-100 text-purple-500";
+        if (tag === "New") return "bg-green-100 text-green-500";
+        return "bg-gray-100 text-gray-500";
+    };
 
 
 
@@ -37,7 +42,7 @@ const Card = ({ productInfo, setcartCount, cartCount }) => {
                 <div className="card-body  flex flex-col justify-between">
 
                     <div className="flex justify-end">
-                        <span className="badge badge-xs badge-warning">
+                        <span className={`badge badge-xs badge-warning ${getTagStyle(productInfo.tag)}`}>
                             {productInfo.tag}
                         </span>
                     </div>
